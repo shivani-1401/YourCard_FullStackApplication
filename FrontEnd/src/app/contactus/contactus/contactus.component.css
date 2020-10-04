@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  padding: 0%;
+  margin: 0%;
+  padding-left: 1.2em;
+}
+
+/* Style inputs */
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 0%;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding-top: 0.5em;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+.title {
+  font-size: 1.6em;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.submit {
+  padding-bottom: 0%;
+}
+
+#image {
+  margin-top: 100px;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+  .column,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .main {
+    padding: 0%;
+  }
+
+  .title {
+    margin-top: 1em;
+  }
+
+  .container p {
+    margin-bottom: 0.5em;
+  }
+
+  #image {
+    margin-top: 0.8em;
+  }
+}

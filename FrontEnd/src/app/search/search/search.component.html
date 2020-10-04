@@ -1,0 +1,42 @@
+<div class="search-section">
+  <div class="head-content">
+    <h2>{{ username }}, looking for any particular payment?</h2>
+    <br />
+    <!--Getting input from the user-->
+    <input type="text" [(ngModel)]="keyword" placeholder="Search by Outlet/Category/City/Country/Year/Month"
+      class="form-control" />
+    <select [formControl]="searchparam">
+      <option [ngValue]="null">Select an Option</option>
+      <option value="outlet">Outlet</option>
+      <option value="category">Category</option>
+      <option value="city">City</option>
+      <option value="country">Country</option>
+      <option value="year">Year</option>
+      <option value="month">Month</option>
+    </select>
+    <button (click)="getPaymentDetails(keyword)" class="btn btn-primary btm-block">
+      <i class="fa fa-search"></i>
+    </button>
+    <br />
+    <label class="error-message">{{ errorMessage }}</label>
+  </div>
+
+  <div id="card-sect">
+    <!--This section will display the search result based on the search keyword given by the user-->
+    <section class="d-flex flex-wrap">
+      <div *ngFor="let payment of paymentList" class="card">
+        <img class="first-att" src="assets/images/logo.png" alt="logo" />
+        <p>Month : {{ payment.month }}</p>
+        <p>Year : {{ payment.year }}</p>
+        <p>City : {{ payment.city }}</p>
+        <p>Country : {{ payment.country }}</p>
+        <p>Category : {{ payment.category }}</p>
+        <p>Outlet : {{ payment.outlet }}</p>
+        <p>
+          Amount : {{ symbol }}
+          {{ getAmountInTwoDecimalPlaces(payment.amount) }}
+        </p>
+      </div>
+    </section>
+  </div>
+</div>

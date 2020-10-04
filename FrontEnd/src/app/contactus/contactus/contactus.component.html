@@ -1,0 +1,37 @@
+<div class="main">
+  <div class="container">
+    <div style="text-align: center">
+      <h2 class="title">Contact Us</h2>
+      <p>
+        Drop us your query and our customer executive will get back to you
+        within 5 mins :
+      </p>
+    </div>
+    <div class="row">
+      <div class="column" id="image">
+        <img src="../../../assets/images/map.jpg" style="width: 100%" />
+      </div>
+      <div class="column">
+        <form #contactUsForm="ngForm">
+          <label for="fname">Name</label>
+          <input required type="text" placeholder="Your name.." [formControl]='name' />
+          <label for="email">Email Address</label>
+          <input required type="text" placeholder="Email address.." [formControl]='email' />
+          <label for="country">Country</label>
+          <select [formControl]='country'>
+            <option [ngValue]="null">
+              Select an Option
+            </option>
+            <option value="India">India</option>
+            <option value="Scotland">Scotland</option>
+            <option value="Canada">Canada</option>
+            <option value="United States">United States</option>
+          </select>
+          <label for="subject">Subject</label>
+          <textarea placeholder="Write something.." style="height: 170px" [formControl]='subject'></textarea>
+          <button class="submit" value="Submit" (click)='submitContactUsForm()'>Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

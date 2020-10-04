@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home">Home</a>
+      <a mat-list-item routerLink="/dashboard">Dashboard</a>
+      <a mat-list-item routerLink="/search">Search</a>
+      <a mat-list-item routerLink="/payment">Payment</a>
+      <a mat-list-item (click)="logout()" *ngIf="authService.isUserAuthenticated()" routerLink="/login">Logout</a>
+      <a mat-list-item routerLink="/contactus">Contact Us</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button class="toolbar" type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="span" id="span-title">YourCard </span>
+      <span class="span" id="span-theme"> Travel the world with ease</span>
+      <div class="header-item-container">
+        <button class="register-btn" mat-flat-button color="primary" routerLink="/register"
+          *ngIf="!authService.isUserAuthenticated()">
+          Register
+        </button>
+        <button class="login-btn" mat-flat-button color="primary" routerLink="/login"
+          *ngIf="!authService.isUserAuthenticated()">
+          Login
+        </button>
+      </div>
+      <i id="signout" (click)="logout()" class="fa fa-sign-out" routerLink="/login"
+        *ngIf="authService.isUserAuthenticated()" aria-hidden="true"></i>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

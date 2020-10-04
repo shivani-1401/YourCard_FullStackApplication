@@ -1,0 +1,26 @@
+.add-payment-panel {
+  width: 50vw;
+  margin: 10vh auto;
+  margin-bottom: 76vh;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.add-button {
+  margin-left: auto;
+}
+
+.error-message {
+  color: red;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .add-payment-panel {
+    width: 280px;
+  }
+}

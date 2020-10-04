@@ -1,0 +1,53 @@
+body {
+  background-image: rgb(252, 244, 244);
+}
+
+.container {
+  margin-bottom: 53vh;
+}
+
+.error-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.error-template h1 {
+  margin-top: 4em;
+}
+
+.error-template h2 {
+  margin-bottom: 1em;
+}
+
+.error-details {
+  font-size: 20px;
+}
+
+.error-actions {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.error-actions .btn {
+  margin-right: 10px;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .error-template h1 {
+    margin-top: 4em;
+  }
+
+  .error-template h2 {
+    font-size: 22px;
+    margin-bottom: 2em;
+  }
+
+  #take {
+    margin-bottom: 1em;
+  }
+
+  .error-details {
+    font-size: 25px;
+  }
+}

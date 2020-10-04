@@ -1,0 +1,27 @@
+<div class="login-page">
+    <section class="login-container">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Login
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <form class="login-form" (submit)="loginSubmit()">
+                <mat-form-field>
+                    <input class="id" matInput placeholder="Username" [formControl]="id">
+                    <mat-error *ngIf="id.invalid">{{ getuserIdErrorMessage() }}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input class="password" matInput type="password" placeholder="Password" [formControl]="password">
+                    <mat-error *ngIf="password.invalid">{{ getPasswordErrorMessage() }}</mat-error>
+                </mat-form-field>
+                <br>
+                <label class="error-message">{{ loginMessage }}</label>
+                <br>
+                <div class="wrapper">
+                    <button mat-raised-button color="primary">Login</button>
+                </div>
+            </form>
+        </mat-expansion-panel>
+    </section>
+</div>

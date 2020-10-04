@@ -1,0 +1,64 @@
+<mat-expansion-panel class="add-payment-panel">
+
+  <mat-expansion-panel-header>
+    <mat-panel-title> New Payment </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="payment-form">
+    <mat-form-field>
+      <input [formControl]="city" matInput placeholder="City" />
+      <mat-error *ngIf="city.invalid">{{ getCityErrorMessage() }}</mat-error>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field>
+      <mat-select [formControl]="country" placeholder="Country">
+        <mat-option value="India">India</mat-option>
+        <mat-option value="US">US</mat-option>
+      </mat-select>
+      <mat-error *ngIf="country.invalid">{{
+        getCountryErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field>
+      <mat-select [formControl]="category" placeholder="Payment Category">
+        <mat-option value="Food">Food</mat-option>
+        <mat-option value="Entertainment">Entertainment</mat-option>
+        <mat-option value="Shopping">Shopping</mat-option>
+        <mat-option value="HotelStay">Hotel Stay</mat-option>
+        <mat-option value="ATM">ATM Withdrawal</mat-option>
+        <mat-option value="Transport">Transport</mat-option>
+        <mat-option value="Others">Others</mat-option>
+      </mat-select>
+      <mat-error *ngIf="category.invalid">{{
+        getCategoryErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field>
+      <input [formControl]="outlet" matInput placeholder="Outlet" />
+      <mat-error *ngIf="outlet.invalid">{{
+        getOutletErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field>
+      <input [formControl]="amount" matInput placeholder="Amount" />
+      <mat-error *ngIf="amount.invalid">{{
+        getAmountErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+    <br />
+
+    <label class="error-message">{{ paymentMessage }}</label>
+    <br />
+
+    <button mat-fab color="primary" class="add-payment" (click)="addPayment()">
+      Add
+    </button>
+  </div>
+</mat-expansion-panel>

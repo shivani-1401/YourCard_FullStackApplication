@@ -1,0 +1,185 @@
+.footer-section-container {
+  background-color: rgb(60, 84, 180);
+  height: 46vh;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.footer-section-content {
+  display: flex;
+  flex-direction: row;
+  height: 37vh;
+}
+
+.logo-links-section {
+  margin-left: 8vw;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  margin-top: 3em;
+}
+
+.pdts {
+  color: white;
+  font-size: 1.5em;
+}
+
+.logo-links-section img {
+  margin-top: 0vh;
+  margin-left: 2.5vw;
+}
+
+.logo-links-section h1 {
+  text-decoration: none;
+  margin-left: 0.5vw;
+}
+
+.logo-links-section ui {
+  list-style-type: none;
+}
+
+.logo-links-section ui li {
+  margin-left: 1.5vw;
+}
+
+.help {
+  color: white;
+  font-weight: 300;
+}
+
+.recent-news-section {
+  width: 25vw;
+  margin-left: 14vw;
+  font-weight: bold;
+}
+
+.recent-news-section h1 {
+  color: white;
+  font-weight: 600;
+  font-size: 1.3em;
+  margin-top: 8vh;
+}
+
+.signup-section {
+  margin-left: 10vh;
+  margin-top: 5.5vh;
+}
+
+.signup-section p {
+  margin-top: 5vh;
+  color: white;
+  font-weight: 300;
+}
+
+.button {
+  background-color: white;
+  text-align: center;
+  margin-top: -0.2em;
+  margin-left: 1vw;
+  padding: 1em;
+  height: 3vh;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.connect {
+  font-size: 1.2em;
+  color: white;
+  margin-top: 0.4em;
+}
+
+.button h1 {
+  margin-top: -0.5em;
+  font-size: 1.2em;
+}
+
+.subscribe-button {
+  display: flex;
+  flex-direction: row;
+}
+
+.social-media-links {
+  display: flexbox;
+  margin-left: 0.3em;
+  box-shadow: blue;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.copyright {
+  margin-left: 5vw;
+  color: white;
+  margin-top: 1.8em;
+}
+
+#twitter {
+  margin-right: 0.2em;
+}
+
+#fb {
+  margin-right: 0.2em;
+}
+
+#instagram {
+  margin-right: 0.2em;
+}
+
+.subscribe {
+  color: white;
+  font-size: 1.5em;
+}
+
+.help {
+  font-size: 1.2em;
+}
+
+.products {
+  font-size: 1.2em;
+  color: white;
+  font-weight: 300;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .footer-section-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+  }
+
+  .footer-section-container {
+    height: 99vh;
+  }
+
+  .logo-links-section {
+    margin-left: 3.8em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .recent-news-section {
+    margin-left: 3.8em;
+    width: auto;
+  }
+
+  .recent-news-section h1 {
+    margin-top: 0%;
+  }
+
+  .copyright {
+    margin-top: 56.5vh;
+  }
+
+  .signup-section {
+    margin-left: 4vh;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .signup-section p {
+    margin-top: 1em;
+  }
+
+  .button {
+    margin-left: 0.8em;
+  }
+}

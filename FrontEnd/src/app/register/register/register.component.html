@@ -1,0 +1,103 @@
+<div class="main">
+  <mat-expansion-panel class="add-register-panel">
+    <mat-expansion-panel-header>
+      <mat-panel-title> Registration Form </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="registration-form">
+      <mat-form-field>
+        <input [formControl]="id" required matInput placeholder="Name" />
+        <mat-error *ngIf="id.invalid">{{ getIdErrorMessage() }}</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" [formControl]="dob" required placeholder="Pick your Date of Birth" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="dob.invalid">{{ getDobErrorMessage() }}</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input [formControl]="aadhaarNo" required matInput placeholder="Aadhaar No." maxlength="12" />
+        <mat-error *ngIf="aadhaarNo.invalid">{{
+          getAadhaarNoErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input [formControl]="panNo" required matInput placeholder="Pan No." maxlength="10" />
+        <mat-error *ngIf="panNo.invalid">{{
+          getPanNoErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input [formControl]="houseNo" required matInput placeholder="House No." />
+        <mat-error *ngIf="houseNo.invalid">{{
+          getHouseNoErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input [formControl]="district" required matInput placeholder="District" />
+        <mat-error *ngIf="district.invalid">{{
+          getDistrictErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input [formControl]="state" required matInput placeholder="State" />
+        <mat-error *ngIf="state.invalid">{{
+          getStateErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input [formControl]="country" required matInput placeholder="Country" />
+        <mat-error *ngIf="country.invalid">{{
+          getCountryErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input [formControl]="password" type="password" required matInput placeholder="Password" />
+        <mat-error *ngIf="password.invalid">{{
+          getPasswordErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input [formControl]="conpassword" type="password" required matInput placeholder=" Confirm Password" />
+        <mat-error *ngIf="conpassword.invalid">{{
+          getConPasswordErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-select [formControl]="cardType" placeholder="Card Type">
+          <mat-option value="Platinum">Platinum Card</mat-option>
+          <mat-option value="Sapphire">Sapphire Card</mat-option>
+          <mat-option value="Millennia">Millennia Card</mat-option>
+        </mat-select>
+        <mat-error *ngIf="cardType.invalid">{{
+          getCardTypeErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <br />
+      <label class="error-message">{{ registerMessage }}</label>
+      <br />
+      <button mat-fab color="primary" class="register" (click)="register()">
+        Register
+      </button>
+    </div>
+  </mat-expansion-panel>
+</div>

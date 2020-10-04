@@ -1,0 +1,67 @@
+version: '3'
+services:
+  userauthentication:
+    image: userauthentication
+    build: BackEnd/app/userauthentication/
+    restart: always
+    network_mode: host
+    depends_on:
+      - mongo
+      - servicediscovery
+    ports:
+      - 9000:9000
+
+  payment:
+    image: payment
+    build: BackEnd/app/payment/
+    restart: always
+    network_mode: host
+    depends_on:
+      - mongo
+      - servicediscovery
+    ports:
+      - 9010:9010
+
+  contact:
+    image: contact
+    build: BackEnd/app/contact/
+    restart: always
+    network_mode: host
+    depends_on:
+      - mongo
+      - servicediscovery
+    ports:
+      - 9015:9015
+
+  servicediscovery:
+    image: servicediscovery
+    build: BackEnd/app/servicediscovery/
+    restart: always
+    ports:
+      - 8761:8761
+
+  gateway:
+    image: gateway
+    build: BackEnd/app/gateway/
+    restart: always
+    ports:
+      - 8765:8765
+    depends_on:
+      - servicediscovery
+
+  mongo:
+    image: mongo:3.2-jessie
+    network_mode: host
+    restart: always
+    ports:
+      - 27017:27017
+
+  webapp:
+    image: webapp
+    build: FrontEnd/
+    network_mode: host
+    ports:
+      - 8080:8080
+    depends_on:
+      - servicediscovery
+

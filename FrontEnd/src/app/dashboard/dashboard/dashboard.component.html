@@ -1,0 +1,75 @@
+<div class="main">
+  <div>
+    <div class="block-card-container">
+      <h2 class="block-text">Card Stolen ??</h2>
+      <button class="block-btn" mat-flat-button color="primary" (click)="showDialogBox()">
+        Block your card
+      </button>
+    </div>
+    <h2 class="head-title">Welcome to Natwest Group, {{ username }}</h2>
+  </div>
+
+
+  <div class="card-flex">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ username }}</mat-card-title>
+        <mat-card-subtitle>International Travel Card</mat-card-subtitle>
+      </mat-card-header>
+      <img class="image-credit" mat-card-image src="../../../assets/images/dashboard-card.jpg" alt="" />
+      <mat-card-content>
+        <p class="card-info1">Card Type : {{ cardType }} Card</p>
+
+        <p class="card-info1">
+          Card Limit per day: {{ symbol }} {{ cardLimit }} <br />
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="example-card" id="card2">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img class="img-card2" src="../../../assets/images/hero-unit/shopping.jpg" alt="" />
+          </div>
+          <div class="flip-box-back">
+            <mat-card-header>
+              <mat-card-title class="title" id="title2">Your Account Info <br /></mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+              <p class="card-info2">
+                Your Customer Id : {{ customerId }} <br />
+                <br />
+                Card no : {{ cardNo }} <br />
+                <br />
+                Balance: {{ symbol }} {{ currentBalance }} <br />
+                <br />
+              </p>
+            </mat-card-content>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div id="explore" *ngIf="paymentList !== undefined">
+    <h2 id="head-title2">Explore your customized dashboard</h2>
+  </div>
+
+  <div *ngIf="paymentList === undefined">
+    <h2 id="head-title2">No analysis to display!</h2>
+  </div>
+
+  <div class="flex-container">
+    <div id="divChart">
+      <canvas id="myChart1" class="chart"></canvas>
+      <canvas id="myChart2" class="chart"></canvas>
+      <h1 class="pie-head" *ngIf="paymentList !== undefined">
+        No. of transactions done City-wise
+      </h1>
+      <canvas id="myChart3"></canvas>
+    </div>
+  </div>
+</div>
